@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#151a22">
+<title>마음의 세 자리</title>
+<meta name="description" content="정필 관법 2편 부록 — 좋은 조언을 듣고도 왜 안 바뀔까: 근본심(시간)·생동심(월간)·정동심(일지), 정과 편의 쓰는 법, 사생왕고와 지장간 사령, 육신으로 읽는 다섯 마음, 내 명조로 세 마음 읽기">
+<style>
+:root{--bg:#16130f;--card:#211c16;--card2:#2c251c;--fg:#eff3f8;--mut:#a3b0c2;--line:#4a3d2a;
+--a:#7cc4ff;--b:#ff9b5c;--ok:#6fdc9a;--bad:#ff7d7d;--gold:#ffd166;--pur:#b79cff}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--fg);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;line-height:1.55}
+[hidden]{display:none!important}
+.wrap{max-width:560px;margin:0 auto;padding:12px 14px 40px}
+h1{font-size:1.2rem;margin:6px 0}
+h1 small{display:block;font-size:.76rem;color:var(--mut);font-weight:400}
+.tabs{display:flex;gap:5px;margin:10px 0}
+.tabs button{flex:1;padding:9px 2px;border:1px solid var(--line);background:var(--card);color:var(--mut);border-radius:10px;font-size:.82rem;font-weight:600}
+.tabs button.on{background:#24406e;color:#fff;border-color:var(--a)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:10px 0}
+h2{font-size:1rem;margin:2px 0 8px}
+.note{font-size:.86rem;color:var(--mut);margin:8px 0 0}
+.note b{color:var(--fg)}
+.btn{padding:11px 14px;border-radius:12px;border:0;background:linear-gradient(135deg,#2f6fd0,#7cc4ff);color:#fff;font-weight:800;font-size:.95rem;flex:1}
+.btn.sec{background:var(--card2);border:1px solid var(--line);color:var(--fg);font-weight:700}
+.btn.sm{flex:none;padding:7px 11px;font-size:.82rem}
+.btn:disabled{opacity:.4}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row+.row{margin-top:8px}
+.pill{padding:7px 11px;border-radius:999px;border:1px solid var(--line);background:var(--card2);color:var(--fg);font-size:.84rem}
+.pill.on{border-color:var(--gold);background:#4a3e1a;color:#fff}
+.lbl{font-size:.8rem;color:var(--mut)}
+canvas{display:block;width:100%;border-radius:12px;background:#10141b;margin-top:8px;touch-action:none}
+.say{background:#16304c;border-left:3px solid var(--a);border-radius:8px;padding:9px 11px;font-size:.92rem;margin-top:10px}
+.say b{color:#fff}
+.say.q{border-left-color:var(--b);background:#2e2118}
+.res{margin-top:10px;font-size:.92rem;border-radius:10px;padding:10px 12px}
+.res.g{background:#16352a;border:1px solid #2f7a52}
+.res.r{background:#3a1d1d;border:1px solid #8a3a3a}
+.res.y{background:#3a3218;border:1px solid #8a7a3a}
+.code{background:#0f131a;border:1px solid #26324a;border-radius:10px;padding:9px 11px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.65;white-space:pre;overflow-x:auto;margin-top:8px}
+.code .k{color:#ff9bd2}.code .s{color:#a5e38a}.code .c{color:#6b7a90}.code .n{color:#ffd166}.code .f{color:#7cc4ff}
+.out{background:#0b0e13;border-radius:10px;padding:8px 11px;margin-top:8px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.8rem;white-space:pre-wrap;word-break:break-all}
+.out .p{color:#6b7a90}.out .o{color:#6fdc9a}.out .w{color:#ffd166}.out .e{color:#ff7d7d}
+.opts{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.opts button{text-align:left;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card2);color:var(--fg);font-size:.92rem}
+.opts button.right{border-color:#6fdc9a;background:#16352a}
+.opts button.wrong{border-color:#ff7d7d;background:#3a1d1d}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:8px}
+.stats div{background:var(--card2);border-radius:10px;padding:7px 6px;text-align:center;font-size:.74rem;color:var(--mut)}
+.stats div b{display:block;font-size:1.02rem;color:var(--fg);font-variant-numeric:tabular-nums}
+.sl{display:grid;grid-template-columns:84px 1fr 54px;gap:8px;align-items:center;font-size:.84rem;margin-top:6px}
+.sl b{text-align:right;font-variant-numeric:tabular-nums}
+input[type=range]{width:100%}
+input[type=text]{flex:1;min-width:0;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:#10141b;color:var(--fg);font-size:.92rem}
+.sum3{margin-top:12px;background:linear-gradient(135deg,#1d3358,#3a2a5a);border-radius:14px;padding:12px 14px}
+.sum3 ol{margin:4px 0;padding-left:20px;font-size:.92rem}
+.mine{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.mine div{display:flex;justify-content:space-between;gap:8px;background:var(--card2);border-radius:10px;padding:8px 10px;font-size:.88rem}
+.mine button{border:0;background:none;color:var(--mut);font-size:.9rem}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#000c;color:#fff;padding:10px 16px;border-radius:999px;font-size:.9rem;opacity:0;transition:opacity .2s;pointer-events:none;z-index:9}
+.toast.on{opacity:1}
+footer{text-align:center;color:var(--mut);font-size:.78rem;margin-top:18px}
+footer a{color:var(--mut)}
+.tw{overflow-x:auto;margin-top:8px;border-radius:10px;border:1px solid #26324a}
+table.df{border-collapse:collapse;width:100%;font-size:.82rem;font-variant-numeric:tabular-nums;background:#0f131a}
+table.df th,table.df td{padding:6px 8px;text-align:center;border-bottom:1px solid #222b38}
+table.df thead th{background:#1a2230;color:#a3b0c2}
+.ax{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+.ax button{padding:6px 9px;border-radius:8px;border:1px solid var(--line);background:var(--card2);color:var(--fg);font-size:.8rem}
+.mat{display:inline-grid;gap:2px 10px;padding:4px 8px;border-left:2px solid #6b7a90;border-right:2px solid #6b7a90;border-radius:4px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85rem;text-align:right;vertical-align:middle}
+.mrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:8px;font-size:.9rem}
+.rt{border-collapse:collapse;margin:8px auto 0;font-variant-numeric:tabular-nums}
+.rt th,.rt td{width:46px;height:38px;text-align:center;border:1px solid #26324a;font-size:.88rem}
+.rt th{background:#1a2230;color:#a3b0c2;font-size:.74rem;font-weight:600}
+.rt td.b{color:#5a6b85}
+.rt td.f{color:#ffd166;font-weight:800;background:#3a3218}
+.flow{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.flow button{flex:1 1 30%;padding:9px 4px;border-radius:10px;border:1px solid var(--line);background:var(--card2);color:var(--fg);font-size:.8rem}
+.flow button.on{border-color:var(--gold);background:#4a3e1a}
+.rep{background:#fff;color:#222;border-radius:10px;padding:12px;margin-top:8px;font-size:.82rem}
+.rep h3{margin:0 0 6px;font-size:1rem}
+.rep table{border-collapse:collapse;font-size:.78rem}
+.rep td,.rep th{border:1px solid #ccc;padding:3px 6px}
+.rep img{max-width:100%;display:block;margin-top:6px}
+.dash{background:#0f131a;border:1px solid #26324a;border-radius:10px;padding:10px;margin-top:8px}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.kpi div{background:#1a2230;border-radius:8px;padding:8px;text-align:center;font-size:.72rem;color:#a3b0c2}
+.kpi b{display:block;font-size:1.15rem;color:#eff3f8}
+.e0{color:#6fdc9a}.e1{color:#ff7d7d}.e2{color:#e8c070}.e3{color:#e8eef5}.e4{color:#7cc4ff}
+.pl{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px;text-align:center}
+.pl div{background:var(--card2);border-radius:12px;padding:8px 4px}
+.pl .h{font-size:.72rem;color:var(--mut)}
+.pl b{display:block;font-size:1.6rem;font-family:serif;line-height:1.25}
+.pl span{font-size:.72rem}
+.pl .hl{outline:2px solid var(--gold)}
+.chk3 div{padding:8px 10px;border-radius:10px;background:var(--card2);margin-top:6px;font-size:.92rem}
+select{padding:9px;border-radius:10px;border:1px solid var(--line);background:#14110d;color:var(--fg);font-size:.95rem}
+input[type=date],input[type=time],input[type=number]{padding:9px;border-radius:10px;border:1px solid var(--line);background:#14110d;color:var(--fg);font-size:.95rem;color-scheme:dark}
+label.c{display:flex;gap:8px;align-items:center;font-size:.9rem;margin-top:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🫀 마음의 세 자리<small>정필 관법 2편 · 좋은 조언을 듣고도 왜 안 바뀔까</small></h1>
+<div class="tabs">
+  <button class="on" data-tab="t1">① 세 자리</button>
+  <button data-tab="t2">② 근본·생동</button>
+  <button data-tab="t3">③ 정동심</button>
+  <button data-tab="t4">④ 내 명조</button>
+</div>
+
+<section id="tab-t1">
+  <div class="card">
+    <h2>🧭 근생정동심: 여덟 글자 속 세 자리</h2>
+    <p class="note" style="margin-top:0">자리를 눌러 보세요. 사례는 1편과 같은 <b>가상 명조</b> — 병진년 계사월 갑술일 신미시.</p>
+    <div class="pl" id="pl1"></div>
+    <div class="row" style="margin-top:8px"><button class="pill on" data-seat="H">근본심 · 시간</button><button class="pill" data-seat="M">생동심 · 월간</button><button class="pill" data-seat="D">정동심 · 일지</button></div>
+    <div id="seatMsg"></div>
+  </div>
+  <div class="card">
+    <h2>🌀 육신으로 읽는 다섯 마음</h2>
+    <div class="gr5" id="six"></div>
+    <div id="sixMsg"></div>
+  </div>
+</section>
+
+<section id="tab-t2" hidden>
+  <div class="card">
+    <h2>🌳 근본심: 정이 놓이면, 편이 놓이면</h2>
+    <p class="note" style="margin-top:0">근본심은 남의 조언을 실제로 따를지 마지막에 정하는 자리. 젊어서 진로를 잘못 들어도 언젠가는 자기 근본의 길로 돌아갑니다.</p>
+    <div class="row" style="margin-top:8px"><button class="pill on" data-jp="jeong">정 (정관·정인 …)</button><button class="pill" data-jp="pyeon">편 (편관·편인 …)</button></div>
+    <div class="tw"><table class="df" id="jpTb"></table></div>
+    <div id="jpMsg"></div>
+  </div>
+  <div class="card">
+    <h2>⚡ 생동심: 찰나의 마음 다루기</h2>
+    <p class="note" style="margin-top:0">월간에 놓인, 순간순간 일어났다 사라지는 마음. 상황을 골라 두 가지 반응을 비교해 보세요.</p>
+    <div class="row" style="margin-top:8px"><button class="pill on" data-sd="0">잘못을 지적받았을 때</button><button class="pill" data-sd="1">기분 나쁜 말을 들었을 때</button><button class="pill" data-sd="2">쉽게 빨리 벌 기회가 보일 때</button></div>
+    <canvas id="sdCv"></canvas>
+    <div id="sdMsg"></div>
+  </div>
+</section>
+
+<section id="tab-t3" hidden>
+  <div class="card">
+    <h2>🏯 사생왕고: 일지 글자로 먼저 읽기</h2>
+    <div class="row" id="jjBtns"></div>
+    <div id="jjMsg"></div>
+  </div>
+  <div class="card">
+    <h2>🔑 지장간 사령이 정한다</h2>
+    <p class="note" style="margin-top:0">같은 일지라도 어느 지장간이 다스리느냐에 따라 마음이 갈립니다. 원고의 가상 명조처럼 <b>음력 생일 일자</b>를 지장간 일수에 맞춰 사령을 정합니다.</p>
+    <div class="row" style="margin-top:8px"><span class="lbl">일간</span><select id="sgD"></select><span class="lbl">일지</span><select id="sgJ"></select></div>
+    <div class="sl"><span>음력 일자</span><input type="range" id="sgL" min="1" max="30" value="24"><b id="sgLv">24일</b></div>
+    <div class="row"><button class="btn sec sm" id="sgEx1">원고 예: 임수 · 인목</button><button class="btn sec sm" id="sgEx2">가상 명조: 갑목 · 술토 · 24일</button></div>
+    <canvas id="sgCv"></canvas>
+    <div id="sgMsg"></div>
+  </div>
+</section>
+
+<section id="tab-t4" hidden>
+  <div class="card">
+    <h2>🧮 내 명조로 세 마음 읽기</h2>
+    <p class="note" style="margin-top:0">양력 날짜와 시계 시각을 넣으세요. 1편과 같은 태양시 보정을 거칩니다. 입력한 내용은 저장하지도, 밖으로 보내지도 않습니다.</p>
+    <div class="row" style="margin-top:8px"><input type="date" id="bD" value="1976-05-22" min="1901-01-01" max="2049-12-31"><input type="time" id="bT" value="15:00"></div>
+    <div class="row"><span class="lbl">태어난 곳 경도</span><select id="bL"></select></div>
+    <label class="c"><input type="checkbox" id="bY" checked> 23~24시는 날짜를 넘기지 않음 (야자시)</label>
+    <div class="row" style="margin-top:8px"><button class="btn" id="bGo">세 마음 읽기 ▶</button></div>
+    <div id="bOut"></div>
+  </div>
+  <div class="card">
+    <h2>📌 오늘의 핵심</h2>
+    <div class="sum3"><ol>
+      <li><b>근본심</b>(시간)은 타고난 깊은 성품 — 조언을 실제로 따를지 마지막에 정한다.</li>
+      <li><b>생동심</b>(월간)은 찰나의 마음 — 잘 털어 내면 조심성만 남는다.</li>
+      <li><b>정동심</b>(일지)은 정해진 직업과 배우자의 마음 — 사생왕고와 지장간 사령으로 읽는다.</li>
+    </ol></div>
+    <div class="say">세 마음을 함께 읽어야 왜 좋은 조언을 듣고도 행동이 바뀌지 않는지가 보입니다. 상담할 때는 <b>생동심이 근본심·정동심과 일치하는지</b>부터 먼저 살핍니다.</div>
+  </div>
+</section>
+
+<footer>© 2026 정필 수심명 · <a href="https://blog.naver.com/omyman" target="_blank" rel="noopener">blog.naver.com/omyman</a><br>정필 관법 2편 부록 · 인터넷 없이 동작 · 입력한 출생 정보는 저장하거나 보내지 않음</footer>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+(()=>{
+'use strict';
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('on'),1800);}
+let touched=false;document.addEventListener('pointerdown',()=>{touched=true;},{once:true,capture:true});
+const vib=n=>{if(!touched)return;try{navigator.vibrate&&navigator.vibrate(n);}catch(e){}};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function prep(cv,ratio){const dpr=Math.min(2,window.devicePixelRatio||1),w=cv.clientWidth||320,h=Math.round(w*ratio);
+  cv.width=w*dpr;cv.height=h*dpr;cv.style.height=h+'px';const c=cv.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);return{c,w,h};}
+function T(c,s,x,y,col,size,al,bl,wt){c.fillStyle=col;c.font=`${wt||''} ${size||12}px -apple-system,"Malgun Gothic",sans-serif`;c.textAlign=al||'center';c.textBaseline=bl||'middle';c.fillText(s,x,y);}
+function single(sel,attr,fn){$$(sel).forEach(b=>b.onclick=()=>{$$(sel).forEach(x=>x.classList.toggle('on',x===b));vib(8);fn(b.dataset[attr]);});}
+function quiz(id,ans,fn){$$(`#${id} button`).forEach(b=>b.onclick=()=>{const ok=b.dataset.a===ans;$$(`#${id} button`).forEach(x=>x.className=x.dataset.a===ans?'right':x===b?'wrong':'');vib(ok?[30,40,60]:80);$(`#${id}Msg`).innerHTML=fn(ok);});}
+function rng(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function gauss(r){let u=0,v=0;while(!u)u=r();while(!v)v=r();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v);}
+function rr(c,x,y,w,h,r){r=Math.min(r,Math.abs(w)/2,Math.abs(h)/2);c.beginPath();c.moveTo(x+r,y);c.arcTo(x+w,y,x+w,y+h,r);c.arcTo(x+w,y+h,x,y+h,r);c.arcTo(x,y+h,x,y,r);c.arcTo(x,y,x+w,y,r);c.closePath();}
+function arrow(c,x0,y0,x1,y1,col,lw){const a=Math.atan2(y1-y0,x1-x0);c.strokeStyle=col;c.fillStyle=col;c.lineWidth=lw||2;c.beginPath();c.moveTo(x0,y0);c.lineTo(x1-6*Math.cos(a),y1-6*Math.sin(a));c.stroke();c.beginPath();c.moveTo(x1,y1);c.lineTo(x1-9*Math.cos(a-.45),y1-9*Math.sin(a-.45));c.lineTo(x1-9*Math.cos(a+.45),y1-9*Math.sin(a+.45));c.closePath();c.fill();}
+const CA='#7cc4ff',CB='#ff9b5c',GO='#ffd166',OK='#6fdc9a',BAD='#ff7d7d',PU='#b79cff',MU='#a3b0c2',FG='#eff3f8';
+const f2=(v,d=2)=>(+v).toFixed(d);const fmt=n=>Math.round(n).toLocaleString('ko-KR');
+
+const pct=v=>(v*100).toFixed(0)+'%';
+
+/* ===== 절기 표 (1900~2100, 12절, KST 분, 1900-01-01 기준 차분·36진) ===== */
+var JEOL_RAW="5p4,wro,x2u,xl7,y62,ynw,yxj,yw5,yk2,y0w,xg3,wz4,wq9,wrn,x2v,xl9,y67,yny,yxj,yw2,yk0,y0x,xg4,wz6,wqa,wrn,x2u,xl6,y61,ynt,yxf,yvz,yk1,y0y,xg9,wzb,wqf,wrn,x2s,xl3,y60,ynt,yxi,yw3,yk2,y10,xg7,wza,wqe,wrn,x2s,xl3,y60,ynu,yxj,yw4,yk2,y0y,xg5,wz8,wqe,wrp,x2u,xl5,y5z,yns,yxe,yw1,yk1,y0y,xg6,wz9,wqe,wrr,x2w,xl7,y62,yns,yxf,yw0,yk0,y0z,xg8,wza,wqe,wro,x2s,xl4,y5z,ynr,yxe,yw1,yk2,y11,xg9,wzb,wqe,wrm,x2r,xl2,y5z,yns,yxh,yw3,yk1,y0z,xg7,wza,wqd,wro,x2s,xl5,y61,ynv,yxi,yw3,yk0,y0w,xg6,wza,wqf,wrp,x2u,xl2,y5x,ynp,yxc,yw0,yk1,y0z,xg8,wzc,wqg,wrp,x2t,xl2,y5v,ynq,yxf,yw4,yk4,y12,xg8,wz9,wqb,wrm,x2s,xl3,y5z,ynt,yxh,yw4,yk5,y11,xg8,wz8,wqb,wrl,x2q,xl3,y5z,ynr,yxd,yw1,yk3,y11,xga,wzb,wqe,wrm,x2r,xl2,y5y,yns,yxf,yw2,yk4,y12,xgc,wze,wqf,wrl,x2n,xkx,y5u,ynp,yxg,yw4,yk5,y14,xgd,wze,wqg,wrm,x2n,xkx,y5s,yno,yxg,yw5,yk6,y13,xga,wzc,wqf,wrp,x2r,xl1,y5w,ynp,yxf,yw4,yk6,y12,xgb,wzc,wqf,wrp,x2s,xl0,y5t,ynl,yx9,yw0,yk4,y14,xgf,wzf,wqh,wro,x2r,xkz,y5t,ynn,yxc,yw1,yk6,y15,xgf,wze,wqf,wrl,x2p,xl0,y5w,yns,yxg,yw3,yk5,y12,xgc,wzd,wqg,wrm,x2p,xl0,y5v,ynq,yxd,yw1,yk2,y11,xga,wze,wqi,wrp,x2s,xl0,y5v,ynq,yxf,yw3,yk5,y13,xgc,wze,wqf,wrm,x2o,xky,y5s,ynp,yxf,yw7,yk8,y16,xgd,wzd,wqc,wrl,x2m,xkx,y5t,yno,yxg,yw6,yka,y16,xgd,wzc,wqc,wrk,x2n,xkz,y5v,ynr,yxg,yw6,yk9,y17,xgf,wze,wqe,wrk,x2m,xku,y5q,ynm,yxc,yw2,yk8,y19,xgj,wzj,wqi,wrl,x2k,xks,y5n,ynk,yxd,yw6,yka,y19,xgi,wzh,wqh,wrl,x2l,xku,y5p,ynl,yxf,yw8,yka,y18,xgg,wzf,wqh,wrn,x2n,xkv,y5p,ynj,yx9,yw1,yk7,y17,xgg,wzh,wqi,wrp,x2q,xkw,y5q,ynj,yxa,yw1,yk8,y19,xgi,wzj,wqh,wrl,x2l,xku,y5q,ynk,yxc,yw3,yk8,y1a,xgj,wzi,wqh,wrk,x2k,xkt,y5p,ynl,yxc,yw4,yk7,y17,xgg,wzg,wqh,wrm,x2m,xkw,y5r,yno,yxf,yw5,yk8,y16,xgf,wzg,wqh,wro,x2m,xku,y5n,ynj,yxb,yw3,yk8,y19,xgi,wzh,wqi,wrn,x2l,xks,y5m,yni,yxc,yw6,ykc,y1c,xgi,wzf,wqe,wri,x2k,xku,y5q,ynm,yxf,yw9,yke,y1c,xgi,wzf,wqe,wrh,x2j,xkt,y5q,ynk,yxb,yw4,yka,y1b,xgk,wzj,wqh,wrk,x2j,xkr,y5m,ynk,yxd,yw5,ykb,y1d,xgn,wzm,wqi,wri,x2g,xkn,y5k,ynj,yxf,yw9,yke,y1f,xgn,wzl,wqj,wrj,x2h,xkn,y5h,yng,yxc,yw8,ykd,y1d,xgl,wzj,wqi,wrm,x2k,xkr,y5l,ynh,yxc,yw7,yke,y1e,xgm,wzk,wqi,wrm,x2l,xkr,y5j,yne,yx7,yw2,ykc,y1g,xgp,wzo,wqk,wrl,x2j,xko,y5i,yne,yx8,yw4,ykc,y1g,xgo,wzm,wqi,wrk,x2h,xkq,y5m,ynj,yxd,yw7,ykd,y1d,xgm,wzl,wqi,wrl,x2j,xkq,y5l,ynh,yx9,yw2,yk9,y1b,xgl,wzm,wqk,wro,x2l,xkq,y5j,ynf,yxa,yw5,ykc,y1d,xgm,wzl,wqi,wrk,x2i,xko,y5j,yng,yxd,yw9,ykg,y1g,xgn,wzk,wqg,wri,x2g,xkn,y5j,ynh,yxb,yw6,ykf,y1f,xgn,wzj,wqf,wri,x2g,xkp,y5l,yni,yxd,yw7,ykf,y1h,xgp,wzl,wqi,wri,x2e,xkl,y5h,yne,yxa,yw6,ykf,y1i,xgs,wzq,wqk,wrj,x2e,xki,y5c,ync,yx9,yw8,ykg,y1i,xgr,wzn,wqk,wrj,x2e,xkk,y5f,ynf,yxc,ywa,ykj,y1i,xgq,wzl,wqj,wrk,x2g,xkn,y5f,ync,yx7,yw4,yke,y1h,xgr,wzo,wqk,wrm,x2i,xkm,y5f,ynb,yx6,yw4,ykf,y1j,xgu,wzp,wqk,wri,x2d,xkk,y5f,yne,yxa,yw8,yki,y1k,xgt,wzq,wqj,wri,x2c,xkj,y5f,yne,yxa,yw6,ykf,y1h,xgq,wzo,wqk,wrl,x2f,xkl,y5f,ynf,yxb,yw8,ykg,y1i,xgq,wzo,wqk,wrl,x2g,xkj,y5d,ynb,yxa,yw7,yki,y1k,xgt,wzq,wqk,wrk,x2f,xki,y5c,yn9,yx8,yw8,ykk,y1m,xgs,wzn,wqh,wrh,x2d,xkk,y5f,yne,yxc,ywb,ykl,y1o,xgt,wzo,wqh,wrf,x2d,xkj,y5f,ynd,yx9,yw6,ykg,y1m,xgv,wzs,wql,wri,x2c,xkh,y5c,yn9,yx8,yw7,ykh,y1n,xgx,wzu,wql,wri,x29,xke,y59,ynb,yxb,ywc,ykm,y1o,xgw,wzt,wql,wrj,x2b,xke,y59,yn9,yx8,yw8,ykk,y1m,xgt,wzq,wql,wrk,x2f,xki,y5b,yn8,yx8,yw7,ykj,y1n,xgw,wzq,wql,wrk,x2d,xki,y5a,yn7,yx5,yw6,ykj,y1p,xgy,wzv,wqm,wrj,x2b,xkf,y59,yn6,yx5,yw6,ykj,y1n,xgw,wzs,wql,wrh,x2b,xkf,y5b,ynb,yxb,yw9,ykl,y1m,xgv,wzr,wql,wri,x2c,xkg,y5b,yna,yx8,yw6,ykh,y1m,xgu,wzs,wqn,wrk,x2c,xkg,y58,yn6,yx7,yw7,ykk,y1o,xgw,wzr,wqk,wrg,x2a,xkd,y58,yn9,yxa,ywd,ykq,y1t,xgy,wzr,wqi,wre,x28,xkd,y58,yn9,yx9,ywa,ykm,y1r,xgx,wzs,wqi,wrf,x29,xkd,y58,yn9,yx9,yw9,ykm,y1s,xh1,wzu,wqm,wrg,x27,xka,y55,yn6,yx7,ywa,yko,y1u,xh3,wzz,wqo,wri,x27,xk8,y51,yn3,yx6,yw9,yko,y1t,xh1,wzv,wqn,wri,x29,xka,y55,yn4,yx8,ywb,ykq,y1u,xh1,wzu,wqm,wri,x2b,xke,y56,yn4,yx4,yw6,ykm,y1s,xh2,wzx,wqo,wrk,x2b,xkd,y56,yn2,yx2,yw5,ykk,y1t,xh3,wzy,wqn,wrh,x28,xka,y55,yn6,yx8,ywa,ykp,y1u,xh3,wzx,wqn,wrg,x27,xkb,y56,yn7,yx8,yw9,ykl,y1p,xgz,wzv,wqo,wri,x2a,xkc,y56,yn6,yx7,yw9,ykm,y1r,xgy,wzv,wqn,wrj,x2a,xka,y53,yn4,yx7,ywb,ykq,y1u,xh2,wzw,wqn,wrh,x27,xk9,y53,yn3,yx5,ywb,ykq,y1v,xh1,wzu,wqj,wre,x26,xk9,y55,yn6,yx8,ywd,yks,y1x,xh2,wzv,wqj,wrd,x24,xka,y55,yn5,yx7,yw9,ykp,y1w,xh4,wzz,wqo,wrg,x24,xk6,y51,yn2,yx4,yw9,ykp,y1w,xh6,x00,wqo,wrf,x22,xk2,y4y,yn1,yx8,ywe,ykv,y20,xh6,wzy,wqn,wrg,x24,xk4,y4z,yn1,yx6,ywb,yks,y1x,xh4,wzx,wqo,wrh,x27,xk8,y50,ymz,yx3,yw8,ykq,y1x,xh6,x00,wqo,wrh,x25,xk6,y4z,ymy,yx3,yw9,yks,y20,xh9,x03,wqq,wrg,x24,xk5,y4y,ymz,yx3,yw8,ykq,y1y,xh7,x00,wqo,wrg,x24,xk5,y50,yn1,yx6,ywc,ykq,y1x,xh6,wzz,wqo,wrh,x25,xk7,y51,yn1,yx5,ywa,ykq,y1w,xh5,x01,wqq,wrj,x27,xk6,y4y,ymz,yx3,yw8,ykr,y1y,xh7,wzz,wqn,wrf,x23,xk4,y4y,yn1,yx6,ywf,ykx,y22,xh8,wzz,wql,wrd,x22,xk4,y50,yn3,yx7,ywd,ykt,y21,xh7,x00,wqm,wre,x22,xk4,y50,yn1,yx5,ywa,ykt,y20,xha,x02,wqp,wrf,x20,xk0,y4u,ymz,yx5,ywd,ykw,y24,xhc,x05,wqs,wrg,x21,xjz,y4s,ymw,yx4,ywd,ykw,y22,xha,x01,wqq,wrf,x23,xk1,y4u,ymx,yx3,ywd,ykw,y23,xha,x01,wqo,wrg,x23,xk4,y4x,ymx,yx1,yw9,yku,y23,xhc,x04,wqq,wrh,x23,xk3,y4v,ymw,ywz,yw7,yks,y22,xhd,x04,wqq,wrd,x20,xk0,y4u,ymx,yx4,ywc,ykw,y25,xhc,x04,wqp,wre,x20,xjz,y4w,ymz,yx5,ywd,ykt,y20,xh9,x03,wqq,wrg,x22,xk1,y4v,ymx,yx3,ywb,ykt,y20,xh9,x03,wqq,wrg,x22,xjy,y4s,ymu,yx3,ywd,yky,y26,xhe,x04,wqp,wre,x20,xjz,y4r,ymv,yx3,ywd,ykz,y25,xhd,x02,wqn,wrb,x1z,xjz,y4u,ymw,yx3,ywd,yky,y27,xhd,x04,wqo,wrc,x1x,xjz,y4t,ymw,yx3,ywb,ykx,y26,xhg,x08,wqt,wrf,x1y,xjw,y4q,ymu,yx1,ywa,ykw,y25,xhg,x08,wqs,wrf,x1x,xju,y4n,ymt,yx2,ywg,yl0,y29,xhg,x06,wqr,wre,x1z,xjx,y4q,ymu,yx3,ywe,yky,y27,xhe,x05,wqr,wrf,x22,xjz,y4s,ymt,yx0,ywa,ykv,y26,xhg,x06,wqs,wrf,x1z,xjx,y4p,ymr,yx0,ywc,ykz,y2a,xhj,x09,wqs,wre,x1y,xjv,y4q,ymt,yx2,ywe,yky,y27,xhg,x06,wqr,wre,x1x,xjx,y4q,ymv,yx3,ywd,yky,y26,xhf,x05,wqr,wre,x1z,xjw,y4q,ymu,yx2,ywd,ykz,y27,xhg,x07,wqs,wrf,x20,xjx,y4o,yms,yx1,ywd,ykz,y29,xhh,x06,wqp,wrb,x1w,xjt,y4o,yms,yx2,ywg,yl4,y2d,xhi,x06,wqo,wr9,x1u,xjt,y4p,ymw,yx4,ywf,yl2,y2b,xhj,x07,wqq,wrc,x1v,xjt,y4o,ymt,yx2,ywc,ykz,y2a,xhk,x0a,wqt,wrd,x1t,xjo,y4i,ymo,yx0,ywf,yl3,y2e,xhn,x0d,wqv,wrd,x1u,xjp,y4i,ymn,yx1,ywg,yl4,y2d,xhj,x0a,wqs,wre,x1w,xjr,y4k,ymo,ywy,ywd,yl2,y2d,xhk,x09,wqs,wrd,x1x,xjt,y4l,ymo,yww,ywb,yl0,y2d,xhn,x0c,wqv,wrf,x1x,xjt,y4l,ymn,ywx,ywa,yky,y2c,xhn,x0c,wqu,wrc,x1t,xjq,y4k,ymp,ywz,ywe,yl1,y2d,xhl,x0b,wqt,wrd,x1u,xjq,y4l,yms,yx2,ywf,yl1,y2a,xhj,x09,wqu,wre,x1x,xjt,y4m,ymq,yx0,ywe,yl0,y2a,xhj,x09,wqs,wre,x1v,xjq,y4h,ymm,ywz,ywg,yl6,y2g,xhn,x0b,wqs,wrb,x1t,xjp,y4j,ymp,yx1,ywi,yl7,y2h,xhm,x0a,wqp,wr9,x1r,xjp,y4l,ymq,yx1,ywg,yl5,y2g,xho,x0b,wqr,wr9,x1r,xjo,y4i,ymn,yx0,ywf,yl4,y2i,xhr,x0g,wqv,wrd,x1r,xjm,y4f,ymm,ywz,ywf,yl5,y2h,xhq,x0f,wqv,wrc,x1q,xjl,y4d,ymk,ywy,ywh,yl8,y2j,xhr,x0d,wqu,wrc,x1s,xjn,y4f,ymm,ywy,ywg,yl6,y2i,xhp,x0e,wqu,wrd,x1v,xjq,y4h,ymm,yww,ywc,yl2,y2g,xhr,x0f,wqv,wrd,x1s,xjm,y4e,ymi,ywv,ywd,yl5,y2j,xht,x0i,wqw,wrc,x1r,xjk,y4f,yml,ywz,ywg,yl6,y2h,xhp,x0f,wqu,wrc,x1s,xjm,y4g,ymn,ywz,ywf,yl4,y2f,xho,x0d,wqu,wrd,x1s,xjn,y4e,ymk,yww,ywe,yl5,y2i,xhq,x0e,wqw,wrd,x1t,xjn,y4f,ymj,ywx,ywg,yl6,y2j,xhr,x0e,wqs,wr9,x1p,xjl,y4e,ymk,ywy,ywg,yla,y2l,xhs,x0e,wqr,wr8,x1n,xjk,y4e,ymn,yx0,ywg,yl8,y2l,xhs,x0g,wqt,wra,x1p,xjk,y4e,ymm,ywz,ywf,yl6,y2j,xht,x0i,wqw,wrb,x1n,xjf,y48,ymg,yww,ywh,yla,y2n,xhw,x0j,wqx,wrb,x1o,xjf,y48,ymh,ywx,ywk,ylc,y2n,xhu,x0f,wqv,wrb,x1q,xjj,y4b,ymi,yww,ywg,yla,y2m,xhu,x0g,wqu,wrb,x1p,xjk,y4a,ymf,ywt,ywe,yl7,y2n,xhy,x0k,wqx,wrc,x1p,xjj,y4b,ymg,ywv,ywf,yl8,y2o,xhx,x0k,wqw,wra,x1m,xjg,y4a,ymh,ywx,ywg,yla,y2n,xhw,x0i,wqw,wra,x1n,xjg,y49,ymj,ywz,ywh,yl9,y2l,xhu,x0i,wqw,wrd,x1r,xjj,y4b,ymi,ywy,ywh,yl8,y2m,xhu,x0h,wqx,wrb,x1o,xjf,y47,yme,ywu,ywi,ylc,y2r,xhy,x0j,wqv,wr9,x1m,xjf,y47,ymg,ywy,ywk,yle,y2r,xhy,x0i,wqt,wr7,x1l,xjg,y4a,ymj,ywy,ywi,ylb,y2q,xhy,x0j,wqv,wr9,x1k,xje,y46,yme,ywu,ywf,ylb,y2q,xi0,x0o,wr0,wrc,x1l,xjc,y44,ymd,ywv,ywi,ylc,y2s,xhz,x0m,wqy,wrb,x1l,xjc,y43,ymd,ywu,ywi,yle,y2s,xhz,x0k,wqw,wra,x1m,xje,y45,ymd,ywu,ywg,ylb,y2r,xhz,x0l,wqx,wrb,x1o,xjh,y48,yme,ywu,ywe,yla,y2q,xhz,x0n,wqy,wra,x1l,xjc,y44,ymb,yws,ywe,ylc,y2s,xi2,x0o,wqy,wra,x1k,xja,y44,ymd,yww,ywj,yld,y2r,xhz,x0l,wqx,wr9,x1l,xjd,y46,ymg,ywx,ywj,ylc,y2p,xhy,x0k,wqw,wra,x1l,xjd,y44,ymb,yws,ywh,ylc,y2s,xi1,x0m,wqy,wrb,x1k,xjc,y43,ymb,ywu,ywj,ylh,y2v,xi3,x0l,wqu,wr7,x1h,xja,y44,ymd,yww,ywk,ylh,y2w,xi4,x0m,wqv,wr5,x1g,xj9,y43,ymd,ywv,ywj,yle,y2v,xi5,x0o,wqz,wr8,x1i,xj9,y43,ymd,ywv,ywj,ylf,y2u,xi5,x0r,wr1,wra,x1h,xj5,y3x,ym7,ywt,ywi,ylh,y2y,xi6,x0r,wr1,wrb,x1i,xj6,y3x,ym6,ywt,ywl,yli,y2y,xi5,x0o,wqy,wra,x1k,xjb,y42,yma,ywu,ywi,ylf,y2x,xi4,x0p,wqy,wra,x1k,xjb,y40,ym7,ywo,ywe,yld,y2w,xi6,x0t,wr1,wrb,x1k,xj8,y41,ym8,ywr,ywh,ylf,y2x,xi6,x0r,wqz,wr9,x1h,xj7,y41,ymb,ywv,ywj,ylf,y2w,xi4,x0p,wqy,wr9,x1h,xj8,y40,yma,ywu,ywi,yle,y2u,xi3,x0o,wqz,wra,x1k,xja,y41,ymb,ywu,ywk,ylh,y2v,xi3,x0p,wqy,wr9,x1g,xj6,y3y,ym7,yws,ywk,ylj,y30,xi8,x0p,wqx,wr5,x1e,xj5,y3x,ym7,ywu,ywm,yll,y31,xi7,x0p,wqw,wr4,x1d,xj6,y40,ymb,yww,ywm,ylj,y30,xi8,x0r,wqy,wr6,x1d,xj3,y3u,ym6,ywq,ywh,yli,y30,xia,x0v,wr3,wr9,x1e,xj1,y3s,ym4,ywr,ywk,yll,y33,xia,x0u,wr0,wr9,x1d,xj3,y3t,ym4,yws,ywl,ylm,y33,xia,x0s,wqz,wr8,x1e,xj4,y3u,ym4,ywp,ywh,yli,y30,xib,x0t,wr1,wra,x1h,xj6,y3w,ym6,ywq,ywh,yli,y31,xib,x0v,wr3,wr9,x1d,xj2,y3t,ym4,ywp,ywi,ylj,y32,xid,x0w,wr3,wr8,x1d,xj1,y3s,ym4,ywr,ywl,ylk,y31,xi9,x0u,wr0,wr9,x1f,xj4,y3w,ym7,ywu,ywm,ylk,y31,xi8,x0s,wr0,wra,x1g,xj4,y3t,ym3,ywp,ywh,ylj,y32,xib,x0u,wr2,wr9,x1g,xj2,y3t,ym2,ywq,ywk,yln,y36,xid,x0t,wqy,wr5,x1b,xj2,y3v,ym7,ywt,ywn,ylo,y36,xid,x0u,wqy,wr4,x1a,xj0,y3u,ym5,ywr,ywj,yll,y33,xid,x0w,wr2,wr8,x1c,xiz,y3t,ym4,yws,ywl,ylm,y34,xie,x0x,wr4,wr8,x1b,xiw,y3o,ym0,ywq,ywm,ylo,y38,xif,x0x,wr3,wr8,x1b,xix,y3n,ylz,ywo,ywm,ylp,y37,xie,x0v,wr0,wr7,x1c,xj1,y3s,ym3,ywq,ywl,yln,y37,xie,x0w,wr1,wr7,x1c,xj0,y3r,ylz,ywm,ywf,ylk,y36,xih,x10,wr5,wr8,x1b,xiy,y3n,ylz,ywn,ywi,ylm,y37,xih,x0y,wr2,wr7,x19,xix,y3p,ym3,yws,ywn,yln,y36,xif,x0w,wr2,wr7,x1b,xix,y3p,ym1,ywp,ywj,ylm,y33,xid,x0w";
+var JEOL=(function(){var a=JEOL_RAW.split(","),o=[],acc=0;for(var i=0;i<a.length;i++){acc+=parseInt(a[i],36);o.push(acc);}return o;})();
+var EP=Date.UTC(1900,0,1);
+function kmin(y,mo,d,h,mi){return Math.round((Date.UTC(y,mo-1,d,h||0,mi||0)-EP)/60000);}
+function fromKmin(m){var d=new Date(EP+m*60000);return {y:d.getUTCFullYear(),mo:d.getUTCMonth()+1,d:d.getUTCDate(),h:d.getUTCHours(),mi:d.getUTCMinutes()};}
+/* JEOL[k]: k=(year-1900)*12+j, j:0 소한(축) 1 입춘(인) 2 경칩 ... 11 대설(자) */
+var JNAME=["소한","입춘","경칩","청명","입하","망종","소서","입추","백로","한로","입동","대설"];
+
+/* ===== 기본 상수 ===== */
+var GAN="甲乙丙丁戊己庚辛壬癸",GANK="갑을병정무기경신임계",JI="子丑寅卯辰巳午未申酉戌亥",JIK="자축인묘진사오미신유술해";
+var GAN_E=[0,0,1,1,2,2,3,3,4,4],JI_E=[4,2,0,0,2,1,1,2,3,3,2,4];
+var JI_YY=[0,1,0,1,0,1,0,1,0,1,0,1]; /* 0 양 1 음 (자 양) */
+var JI_MAIN=[9,5,0,1,4,2,3,5,6,7,4,8]; /* 지지 본기 천간 */
+var EN=["목","화","토","금","수"],EH=["木","火","土","金","水"];
+var ANIMAL="쥐소범토끼용뱀말양원숭이닭개돼지";var ANI=["쥐","소","호랑이","토끼","용","뱀","말","양","원숭이","닭","개","돼지"];
+function pad(n){return String(n).padStart(2,"0");}
+function jdn(y,m,d){var a=Math.floor((14-m)/12),yy=y+4800-a,mm=m+12*a-3;return d+Math.floor((153*mm+2)/5)+365*yy+Math.floor(yy/4)-Math.floor(yy/100)+Math.floor(yy/400)-32045;}
+function dayIdx(y,m,d){return ((jdn(y,m,d)+49)%60+60)%60;}
+function gz(i){return {g:i%10,j:i%12};}
+function idxOf(g,j){for(var i=0;i<60;i++)if(i%10===g&&i%12===j)return i;return 0;}
+
+/* ===== 십성 ===== */
+var SIP=["비견","겁재","식신","상관","편재","정재","편관","정관","편인","정인"];
+function sipsung(me,o){ /* me,o: 천간 index */
+  var a=GAN_E[me],b=GAN_E[o],same=(me%2)===(o%2),rel=((b-a)%5+5)%5; /* 0 같음 1 내가 생 2 내가 극 3 나를 극 4 나를 생 */
+  return SIP[rel*2+(same?0:1)];
+}
+var SIPDESC={
+ "비견":["나와 같은 기운","자립심·주체성. 내 페이스를 지키려는 힘"],
+ "겁재":["경쟁하는 동료","승부욕·추진력. 함께하되 지지 않으려는 마음"],
+ "식신":["내가 표현하는 것","여유·재능·먹고 즐기는 힘. 꾸준히 만들어 내는 성향"],
+ "상관":["틀을 깨는 표현","말솜씨·창의·개혁. 불합리에 민감한 마음"],
+ "편재":["크게 움직이는 재물","활동성·사교·기회 포착. 넓게 벌이는 힘"],
+ "정재":["차곡차곡 모으는 재물","성실·계획·현실 감각. 안정을 지키는 마음"],
+ "편관":["나를 단련하는 압력","책임감·카리스마·위기 대응. 긴장 속에서 강해짐"],
+ "정관":["바른 규칙과 명예","원칙·신뢰·체면. 사회적 역할을 중시"],
+ "편인":["독특한 배움과 직관","통찰·특수 기술·혼자만의 사색"],
+ "정인":["돌봄과 학문","배움·수용·보호받는 안정감. 생각이 깊음"]
+};
+var TODAYMSG={
+ "비견":"내 뜻대로 밀고 나가기 좋은 날입니다. 다만 혼자 다 하려 하기보다 같은 편을 만들어 보세요.",
+ "겁재":"경쟁심이 올라오는 날입니다. 비교보다는 어제의 나와 겨뤄 보세요. 지출은 한 번 더 생각하세요.",
+ "식신":"마음에 여유가 생기는 날입니다. 맛있는 것, 좋아하는 일로 나를 채우면 일도 술술 풀립니다.",
+ "상관":"말과 아이디어가 날카로워지는 날입니다. 좋은 생각은 기록하되, 말은 한 템포 부드럽게.",
+ "편재":"움직일수록 기회가 보이는 날입니다. 새로운 사람·장소를 가볍게 열어 두세요.",
+ "정재":"차근차근 정리하고 챙기기 좋은 날입니다. 미뤄 둔 계산·계획을 마무리해 보세요.",
+ "편관":"부담이나 압박이 느껴질 수 있는 날입니다. 해야 할 일 하나에 집중하면 오히려 힘이 됩니다.",
+ "정관":"원칙과 약속이 빛나는 날입니다. 맡은 역할을 성실히 하면 신뢰가 쌓입니다.",
+ "편인":"혼자 생각하고 배우기 좋은 날입니다. 직감을 메모해 두되 결정은 조금 천천히.",
+ "정인":"도움과 배움이 들어오는 날입니다. 조언을 구하거나 책 한 줄 읽기 좋습니다."
+};
+var ILGAN=[
+ ["갑목(甲木)","큰 나무","곧게 위로 뻗는 성장형. 목표가 생기면 우직하게 밀고 나가고, 앞장서서 길을 여는 편입니다. 꺾이지 않으려는 자존심이 강점이자 숙제입니다."],
+ ["을목(乙木)","풀과 덩굴","부드럽게 휘어도 꺾이지 않는 적응형. 관계 속에서 길을 찾고 섬세하게 분위기를 읽습니다. 남의 기대에 맞추느라 지치지 않게 하세요."],
+ ["병화(丙火)","태양","밝고 솔직하며 표현이 큰 편. 주변을 환하게 만드는 에너지가 있습니다. 쉽게 달아오르고 식을 수 있으니 꾸준함을 챙기세요."],
+ ["정화(丁火)","촛불·등불","은은하고 따뜻한 집중형. 한 사람, 한 가지 일에 깊이 마음을 씁니다. 속으로 삭이는 감정을 가끔 꺼내 보세요."],
+ ["무토(戊土)","큰 산","묵직하고 믿음직한 중재형. 쉽게 흔들리지 않고 사람들을 품습니다. 변화가 필요할 때 너무 버티지 않는 유연함이 과제입니다."],
+ ["기토(己土)","논밭","포용력 있고 실용적인 양육형. 사람과 일을 길러 내는 재주가 있습니다. 걱정이 많아질 때는 생각을 땅에 내려놓듯 정리하세요."],
+ ["경금(庚金)","바위·무쇠","결단력 있고 원칙적인 개척형. 옳고 그름이 분명하고 추진력이 강합니다. 강한 말이 상처가 되지 않게 온도를 조절하세요."],
+ ["신금(辛金)","보석","섬세하고 완벽을 추구하는 감각형. 기준이 높고 아름다움에 민감합니다. 스스로에게 너그러울수록 더 빛납니다."],
+ ["임수(壬水)","바다·큰 강","스케일이 크고 자유로운 탐구형. 지혜롭고 포용력이 넓습니다. 방향 없이 흘러가지 않도록 목표의 둑을 세우세요."],
+ ["계수(癸水)","비·이슬","조용하고 직관적인 지혜형. 보이지 않는 것을 잘 읽고 스며들 듯 영향을 줍니다. 생각이 깊어 우울해질 때는 몸을 움직여 보세요."]
+];
+var ELACK={0:"새로 시작하고 계획하는 힘(목)이 약할 수 있어요. 작은 목표를 세우고 첫걸음을 떼는 연습이 도움이 됩니다.",
+ 1:"표현하고 드러내는 힘(화)이 약할 수 있어요. 감정을 말로, 생각을 글로 밖에 꺼내 보세요.",
+ 2:"중심을 잡고 버티는 힘(토)이 약할 수 있어요. 규칙적인 생활 리듬이 마음을 안정시킵니다.",
+ 3:"정리하고 결단하는 힘(금)이 약할 수 있어요. 버릴 것과 지킬 것을 하나씩 정해 보세요.",
+ 4:"쉬고 돌아보는 힘(수)이 약할 수 있어요. 잠과 휴식, 혼자 생각하는 시간을 꼭 챙기세요."};
+var EOVER={0:"목 기운이 많아 추진력과 고집이 함께 큽니다.",1:"화 기운이 많아 열정적이지만 쉽게 과열될 수 있어요.",2:"토 기운이 많아 듬직하지만 변화에 느릴 수 있어요.",3:"금 기운이 많아 원칙이 분명하지만 날카로워질 수 있어요.",4:"수 기운이 많아 생각이 깊지만 걱정이 길어질 수 있어요."};
+var HAP=[[0,1],[2,11],[3,10],[4,9],[5,8],[6,7]],CHUNG=[[0,6],[1,7],[2,8],[3,9],[4,10],[5,11]];
+function pairIn(list,a,b){for(var i=0;i<list.length;i++){var p=list[i];if((p[0]===a&&p[1]===b)||(p[0]===b&&p[1]===a))return true;}return false;}
+
+/* ===== 시간 보정 ===== */
+var DST=[["1948-06-01","1948-09-13"],["1949-04-03","1949-09-11"],["1950-04-01","1950-09-10"],["1951-05-06","1951-09-09"],["1955-05-05","1955-09-09"],["1956-05-20","1956-09-30"],["1957-05-05","1957-09-22"],["1958-05-04","1958-09-21"],["1959-05-03","1959-09-20"],["1960-05-01","1960-09-18"],["1987-05-10","1987-10-11"],["1988-05-08","1988-10-09"]];
+var T830=[["1908-04-01","1911-12-31"],["1954-03-21","1961-08-09"]];
+function inRange(ds,list){for(var i=0;i<list.length;i++)if(ds>=list[i][0]&&ds<=list[i][1])return true;return false;}
+
+/* ===== 사주 계산 ===== */
+function calc(o){ /* o:{y,mo,d,h,mi,noTime,sex,solar,yaja,dst} 양력 */
+  var notes=[],m=kmin(o.y,o.mo,o.d,o.noTime?12:o.h,o.noTime?0:o.mi);
+  var ds=o.y+"-"+pad(o.mo)+"-"+pad(o.d);
+  if(!o.noTime&&o.dst){
+    if(inRange(ds,DST)){m-=60;notes.push("서머타임 기간이라 1시간 빼서 계산했습니다.");}
+    if(inRange(ds,T830)){m+=30;notes.push("당시 표준시(UTC+8:30)를 현재 기준으로 30분 더해 계산했습니다.");}
+  }
+  if(!o.noTime&&o.solar){m-=32;notes.push("진태양시 보정(−32분)을 적용했습니다.");}
+  var t=fromKmin(m);
+  /* 절기 위치 */
+  var k=(t.y-1900)*12+11;if(k>=JEOL.length)k=JEOL.length-1;
+  while(k>0&&JEOL[k]>m)k--;
+  var j=k%12,jy=1900+Math.floor(k/12);
+  /* 연: 입춘 기준 */
+  var sy=(j===0)?jy-1:jy; /* 소한(축월)은 앞 해 */
+  if(j>=1)sy=jy;
+  var yi=((sy-4)%60+60)%60,Y=gz(yi);
+  /* 월 */
+  var mb=(j+1)%12; /* j0 소한→축(1), j1 입춘→인(2), j11 대설→자(0) */
+  var ord=(mb-2+12)%12,mg=((Y.g%5)*2+2+ord)%10,M={g:mg,j:mb};
+  /* 일 */
+  var dy=t.y,dmo=t.mo,dd=t.d,late=!o.noTime&&t.h>=23;
+  var dt=new Date(Date.UTC(dy,dmo-1,dd));
+  if(late&&!o.yaja)dt=new Date(dt.getTime()+864e5);
+  var D=gz(dayIdx(dt.getUTCFullYear(),dt.getUTCMonth()+1,dt.getUTCDate()));
+  /* 시 */
+  var H=null;
+  if(!o.noTime){
+    var hb=Math.floor((t.h+1)/2)%12,dg=D.g;
+    if(late&&o.yaja){var nd=new Date(Date.UTC(dy,dmo-1,dd)+864e5);dg=gz(dayIdx(nd.getUTCFullYear(),nd.getUTCMonth()+1,nd.getUTCDate())).g;}
+    H={g:((dg%5)*2+hb)%10,j:hb};
+  }
+  /* 대운 */
+  var yang=(Y.g%2===0),fwd=(yang&&o.sex==="M")||(!yang&&o.sex==="F");
+  var diff=fwd?(JEOL[k+1]-m):(m-JEOL[k]);
+  var days=diff/1440,dsu=Math.max(1,Math.round(days/3));
+  var mi0=idxOf(M.g,M.j),dae=[];
+  for(var n=1;n<=10;n++){var ii=((mi0+(fwd?n:-n))%60+60)%60;dae.push({g:ii%10,j:ii%12,age:dsu+(n-1)*10});}
+  return {Y:Y,M:M,D:D,H:H,t:t,notes:notes,dae:dae,fwd:fwd,dsu:dsu,sy:sy,jeolName:JNAME[j]};
+}
+function elemCount(r){var c=[0,0,0,0,0];[r.Y,r.M,r.D,r.H].forEach(function(p){if(!p)return;c[GAN_E[p.g]]++;c[JI_E[p.j]]++;});return c;}
+
+/* ===== 관법 도구 ===== */
+const JJG=[[[8,10],[9,20]],[[9,9],[7,3],[5,18]],[[4,7],[2,7],[0,16]],[[0,10],[1,20]],[[1,9],[9,3],[4,18]],[[4,7],[6,7],[2,16]],[[2,10],[5,9],[3,11]],[[3,9],[1,3],[5,18]],[[4,7],[8,7],[6,16]],[[6,10],[7,20]],[[7,9],[3,3],[4,18]],[[4,7],[0,7],[8,16]]];
+const DOOR=n=>n===2?['여기','정기']:['여기','중기','정기'];
+const ECOL=['#6fdc9a','#ff7d7d','#e8c070','#e8eef5','#7cc4ff'];
+const gk=g=>GANK[g]+EN[GAN_E[g]];
+function doors(b){const L=JJG[b];let s=0;const nm=DOOR(L.length);return L.map(([g,d],i)=>{const o={g,d,min:d*4,from:s,to:s+d*4-1,name:nm[i]};s+=d*4;return o;});}
+const hStart=b=>((b*2-1)+24)%24; /* 시지 시작 시각(태양시) */
+const hm=m=>{m=((m%1440)+1440)%1440;return pad(Math.floor(m/60))+':'+pad(m%60);};
+function rel(a,b){ /* a 오행이 b 오행에 대해: 0같음 1생 2극 3극받음 4생받음 */ return ((GAN_E[b]-GAN_E[a])%5+5)%5;}
+const SIPK={"비견":"나와 같은 힘","겁재":"함께 달리는 동료이자 경쟁자","식신":"즐겁게 만들어 내는 힘","상관":"표현하고 새 판을 벌이려는 불꽃","편재":"넓게 움직이는 재물·기회","정재":"꼼꼼히 계산하고 터전을 다지는 힘","편관":"압박을 견디는 강한 규율","정관":"원칙을 세우고 책임지려는 바른 마음","편인":"남다르게 꿰뚫는 직관","정인":"배우고 받아들이는 너그러움"};
+const OPT=(arr)=>arr.map((t,i)=>`<option value="${i}">${t}</option>`).join('');
+
+const LUNAR_KR="30.8.96d,49.0.4ae,38.0.a57,28.5.a4d,46.0.d26,34.0.d95,24.4.d55,43.0.56a,32.0.9ad,21.2.95d,40.0.4ae,29.6.149b,48.0.a4d,36.0.d25,25.5.1b29,44.0.b55,34.0.56a,22.2.12da,41.0.95d,31.7.95b,50.0.49b,38.0.a4b,27.5.164b,46.0.6a9,35.0.ad4,23.4.16b5,43.0.2b6,32.0.95b,22.2.937,40.0.497,29.6.c96,47.0.e4a,36.0.ea5,25.5.da9,44.0.5b5,34.0.2b6,23.3.12ae,41.0.92e,30.7.192d,49.0.c95,38.0.d4a,26.6.1b4a,45.0.b69,35.0.56d,25.4.55b,43.0.25d,32.0.92d,21.2.192b,40.0.a95,28.7.1a95,47.0.b4a,36.0.b55,26.5.ad5,44.0.4db,34.0.25b,23.3.1257,42.0.52b,30.8.152b,49.0.695,38.0.6aa,27.6.15aa,45.0.ab5,35.0.4b6,24.4.14ae,43.0.a57,32.0.527,21.3.d26,39.0.d95,29.7.d55,47.0.56a,36.0.9ad,26.5.95d,45.0.4ae,33.0.a4e,22.4.1a4d,41.0.d25,30.8.1aa9,48.0.b54,37.0.d6a,27.6.12da,46.0.95b,35.0.49b,24.4.149b,43.0.a4b,32.10.164b,50.0.6a5,39.0.6d4,28.6.16b5,48.0.2b6,36.0.95b,26.5.937,45.0.497,34.0.64b,22.3.d4a,40.0.ea5,30.8.da9,49.0.5ad,38.0.2b6,27.5.126e,46.0.92e,35.0.c96,23.4.1c95,42.0.d4a,31.0.da5,21.2.b55,39.0.56c,28.7.155b,48.0.25d,37.0.92d,25.5.192b,44.0.a95,33.0.b4a,22.3.174a,40.0.b55,30.9.ab5,49.0.4ba,38.0.a5b,27.5.a57,46.0.52b,35.0.a95,24.4.1695,42.0.6aa,31.0.ad5,21.2.ab5,40.0.4b6,28.6.14ae,47.0.a57,37.0.527,26.5.d26,43.0.d93,33.0.5aa,22.3.156a,41.0.96d,30.11.95d,49.0.4ae,38.0.a4d,27.6.1a4d,45.0.d25,34.0.d52,23.5.1b54,42.0.b6a,31.0.96d,21.2.95b,40.0.49b,29.7.1497,47.0.a4b,36.0.b25,25.5.16a5,44.0.6d4,32.0.ada,22.3.12b4".split(",");
+function lunarKR(y,m,d){
+  const t=Date.UTC(y,m-1,d);
+  for(const ly of [y,y-1]){
+    if(ly<1900||ly>2050) continue;
+    const a=LUNAR_KR[ly-1900].split("."), off=+a[0], lp=+a[1], n=lp?13:12, bits=parseInt(a[2],16).toString(2).padStart(n,"0");
+    let day=Math.round((t-Date.UTC(ly,0,1))/864e5)-off; // 그해 음력 1월 1일부터 지난 날 수
+    if(day<0) continue;
+    let idx=0;
+    for(let mm=1;mm<=12;mm++){
+      const len=bits[idx++]==="1"?30:29;
+      if(day<len) return {y:ly,m:mm,d:day+1,leap:false,ok:true};
+      day-=len;
+      if(lp===mm){const ll=bits[idx++]==="1"?30:29; if(day<ll) return {y:ly,m:mm,d:day+1,leap:true,ok:true}; day-=ll;}
+    }
+  }
+  return null;
+}
+const LONS=[['서울',127.0],['인천',126.7],['수원',127.0],['춘천',127.7],['강릉',128.9],['대전',127.4],['청주',127.5],['전주',127.1],['광주',126.9],['대구',128.6],['부산',129.1],['울산',129.3],['포항',129.4],['창원',128.7],['제주',126.5],['평양',125.8],['원고 기준(127.5°≈30분)',127.5]];
+const GRP=s=>({비견:0,겁재:0,식신:1,상관:1,편재:2,정재:2,편관:3,정관:3,편인:4,정인:4})[s];
+const GNAME=['비겁','식상','재성','관성','인성'];
+const GMIND=['내 안에서 나를 바라보는 마음','상대가 나를 대하는 마음','재물과 이성을 바라보는 마음','내 마음을 들여다보는 상대','내가 상대를 대하는 마음'];
+const isJeong=s=>['겁재','상관','정재','정관','정인'].includes(s);
+const SIPMIND={비견:'내 페이스대로, 스스로 서려는 마음',겁재:'지기 싫어하고 함께 겨루려는 마음',식신:'즐겁게 만들고 베풀고 싶은 마음',상관:'표현하고 새 판을 벌이고 싶은 마음',편재:'넓게 굴리고 크게 벌고 싶은 마음',정재:'꼼꼼히 모으고 지키고 싶은 마음',편관:'버티고 이겨 내려는 강한 마음',정관:'바르고 단정하게, 명예와 체면을 지키려는 마음',편인:'남다르게 꿰뚫고 혼자 파고드는 마음',정인:'배우고 싶고, 기대고 싶은 마음'};
+const JOB={비견:'독립·자영, 내 기술로 서는 일',겁재:'경쟁·영업, 팀으로 겨루는 일',식신:'손재주·창작·요리·교육처럼 만들어 내는 일',상관:'말·표현·기획·예술, 새 판을 짜는 일',편재:'사업과 투자, 금융',정재:'회계·세무·관리, 안정된 재무',편관:'활동적인 영업과 교육, 조직을 다루는 일',정관:'공직·관리직, 원칙과 책임의 일',편인:'연구·기술·상담처럼 깊이 파는 일',정인:'교육·문서·자격, 배우고 가르치는 일'};
+const SEAT={H:['근본심','시간','타고난 가장 깊은 성품. 남의 조언을 듣고 실제로 따를지 말지를 마지막에 정하는 자리. 젊어서 진로를 잘못 들어도 언젠가는 자기 근본의 길로 돌아갑니다.'],M:['생동심','월간','순간순간 일어났다 사라지는 찰나의 마음. 즐겁고 싶고, 편하고 싶고, 쉽게 빨리 벌고 싶은 마음이 수시로 오갑니다. 대운·세운·그날의 기운에 흔들리니, 생동심만 읽어도 지금 어떤 삶을 사는지가 보입니다.'],D:['정동심','일지','비교적 정해져 있는 마음. 직업과 사랑, 사람과 활동이 모두 담기며, 먼저 볼 것은 배우자를 바라는 마음과 직업의 마음입니다.']};
+const EX=calc({y:1976,mo:5,d:22,h:14,mi:30,noTime:false,sex:'M',solar:false,yaja:true,dst:false});
+const JJT=JIK.split('').map((k,i)=>({k,h:JI[i],t:[2,8,5,11].includes(i)?'생지':[0,6,3,9].includes(i)?'왕지':'고지'}));
+function seatPl(r,seat,lunarD){const cells=[['시주',r.H,'H'],['일주',r.D,'D'],['월주',r.M,'M'],['연주',r.Y,null]];
+  return cells.map(([n,p,k])=>{const hiG=(k==='H'&&seat==='H')||(k==='M'&&seat==='M'),hiJ=k==='D'&&seat==='D';return`<div><div class="h">${n}</div><b class="e${GAN_E[p.g]}" style="${hiG?'outline:2px solid #ffd166;border-radius:8px':''}">${GAN[p.g]}</b><span class="e${GAN_E[p.g]}">${GANK[p.g]}</span><b class="e${JI_E[p.j]}" style="${hiJ?'outline:2px solid #ffd166;border-radius:8px':''}">${JI[p.j]}</b><span class="e${JI_E[p.j]}">${JIK[p.j]}</span></div>`;}).join('');}
+/* 일지 사령: 음력 일자를 지장간 일수 순서에 맞춤 */
+function dayLord(j,ld){let acc=0;const D=doors(j);for(const q of D){acc+=q.d;if(ld<=acc)return q;}return D[D.length-1];}
+function dayRanges(j){let acc=0;return doors(j).map(q=>{const r=[acc+1,acc+q.d];acc+=q.d;return{...q,r};});}
+
+/* ===== ① ===== */
+let seat='H';
+function seatDraw(){$('#pl1').innerHTML=seatPl(EX,seat);const[n,pos,txt]=SEAT[seat],dg=EX.D.g;
+  const v=seat==='H'?EX.H.g:seat==='M'?EX.M.g:null;let ex;
+  if(v!==null){const s=sipsung(dg,v);ex=`가상 명조: ${pos} <b>${gk(v)}</b> = 갑목에게 <b>${s}</b> — ${SIPMIND[s]}.`;}
+  else{const q=dayLord(EX.D.j,24),s=sipsung(dg,q.g);ex=`가상 명조: 일지 <b>술토(고지)</b>. 음력 4월 24일생이라 술토 안의 정기 <b>${gk(q.g)}</b>가 다스리니 갑목에게 <b>${s}</b>.`;}
+  $('#seatMsg').innerHTML=`<div class="res g"><b>${n}</b> (${pos}) — ${txt}</div><div class="say">${ex}</div>`;}
+single('[data-seat]','seat',v=>{seat=v;seatDraw();});
+$('#six').innerHTML=GNAME.map((g,i)=>`<button class="pill" data-six="${i}">${g}</button>`).join('');
+$$('[data-six]').forEach(b=>b.onclick=()=>{$$('[data-six]').forEach(x=>x.classList.toggle('on',x===b));const i=+b.dataset.six;const pair=[['비견','겁재'],['식신','상관'],['편재','정재'],['편관','정관'],['편인','정인']][i];
+  $('#sixMsg').innerHTML=`<div class="res g"><b>${GNAME[i]}</b> (${pair.join('·')}) — ${GMIND[i]}</div><p class="note">${pair.map(p=>`${p}: ${SIPMIND[p]}`).join('<br>')}</p>`;vib(8);});
+
+/* ===== ② ===== */
+const JP={jeong:[['결정할 때','상대를 다 믿지는 말고, 믿고 결정할 때는 빠르고 과감하게'],['막혔을 때','미련 없이 버릴 줄 안다'],['조심할 것','매사 안일하면 결정적인 순간에 판단이 흐려진다'],['한 가지 노력','"답답하다"는 소리만 듣지 않으려 애쓰기']],
+  pyeon:[['결정할 때','화합해서 의견을 따른다'],['막혔을 때','신중하게 주변 이야기를 귀담아듣는다'],['조심할 것','남을 이용해 편하려 하면 결정적인 순간에 돕는 이가 하나도 없다'],['한 가지 노력','"약삭빠르다"는 소리만 듣지 않으려 애쓰기']]};
+function jpDraw(k){$('#jpTb').innerHTML=`<tbody>${JP[k].map(([a,b])=>`<tr><th style="width:84px">${a}</th><td style="text-align:left">${b}</td></tr>`).join('')}</tbody>`;
+  $('#jpMsg').innerHTML=`<div class="res ${k==='jeong'?'g':'y'}">${k==='jeong'?'근본심에 <b>정관·정인</b>처럼 바른 정의 기운이 놓이면 이렇게 씁니다. 가상 명조의 근본심 <b>신금 정관</b>이 여기에 해당합니다 — 끝까지 잘 가지만, 답답하다는 평은 조심.':'근본심에 <b>편관·편인</b>처럼 치우친 편의 기운이 놓이면 쓰는 법이 다릅니다.'} 이 한 가지만 애써도 사람에게 인정받고, 사람이 따르게 됩니다.</div>`;}
+single('[data-jp]','jp',jpDraw);
+const SD=[['잘못을 지적받았을 때','바로 변명하고 맞받아친다','바로 인정하고 사과한다','오히려 명예가 회복됩니다.'],['기분 나쁜 말을 들었을 때','그 자리에서 곧바로 반응한다','깊이 생각한 뒤 예의 있게 설명한다','깊이 있는 사람으로 보입니다.'],['쉽게 빨리 벌 기회가 보일 때','당장 뛰어든다','하루 묵히고 근본심에 묻는다','찰나의 욕심이 털려 나가고 조심성만 남습니다.']];let sdK=0;
+function sdDraw(){const s=SD[sdK],{c,w,h}=prep($('#sdCv'),.62);const cx=w/2,top=h*.16;T(c,'⚡ '+s[0],cx,top-6,GO,13,'center','middle','800');
+  [[w*.27,BAD,'곧바로',s[1],'근본심에 보태져 오래 감'],[w*.73,OK,'한 박자 쉬고',s[2],'털어 내면 조심성만 남음']].forEach(([x,col,lab,act,res])=>{c.strokeStyle=col;c.lineWidth=3;arrow(c,cx,top+12,x,h*.38,col,2.5);c.fillStyle=col+'22';rr(c,x-w*.21,h*.4,w*.42,h*.26,12);c.fill();c.strokeStyle=col;c.lineWidth=2;c.stroke();T(c,lab,x,h*.46,col,12,'center','middle','800');
+    c.font='600 12px -apple-system,"Malgun Gothic",sans-serif';const ln=[];let cur='';for(const ch of act){if(c.measureText(cur+ch).width>w*.38){ln.push(cur);cur=ch;}else cur+=ch;}ln.push(cur);ln.slice(0,2).forEach((l,i)=>T(c,l,x,h*.53+i*16,FG,12,'center','middle','600'));
+    arrow(c,x,h*.67,x,h*.78,col,2);T(c,res,x,h*.86,col,11.5,'center','middle','800');});
+  $('#sdMsg').innerHTML=`<div class="res g">${s[2]} → ${s[3]} 찰나의 마음을 잘못 다루면 <b>근본심에 보태져 오래 가고</b>, 잘 털어 내면 <b>조심성만 남습니다</b>.</div>`;}
+single('[data-sd]','sd',v=>{sdK=+v;sdDraw();});
+
+/* ===== ③ ===== */
+const JJTXT={생지:'<b>인신사해 생지</b> — 진취적이고 활동적. 사무직이라도 출장이 잦은 일을 좋아하고, 돌아다니다 인연을 만나 연애결혼을 하는 경우가 많습니다.',왕지:'<b>자오묘유 왕지</b> — 도화의 자리. 가만히 있어도 남들이 알아주고 아껴 주니, 사람과의 인연이 끊이지 않는 일, 사람들 앞에 서는 일과 잘 어울립니다.',고지:'<b>진술축미 고지</b> — 화개의 자리, 창고. 창고지기처럼 열고 닫는 일이 많아 건축·토목·판매·영업처럼 움직이는 직업에 많습니다. 닫혀 있는 듯해도 자꾸 두드리면 열리는 마음이고, 활인과 봉사, 철학에도 마음이 갑니다.'};
+$('#jjBtns').innerHTML=JJT.map((x,i)=>`<button class="pill ${i===10?'on':''}" data-jj="${i}" style="min-width:52px">${x.h} ${x.k}</button>`).join('');
+function jjShow(i){$$('[data-jj]').forEach(b=>b.classList.toggle('on',+b.dataset.jj===i));const x=JJT[i];$('#jjMsg').innerHTML=`<div class="res ${x.t==='생지'?'g':x.t==='왕지'?'y':'r'}" style="${x.t==='고지'?'background:#2c251c;border-color:#8a7a3a':''}"><b class="big">${x.h} ${x.k}</b> ${JJTXT[x.t]}${i===10?'<br><span class="mini">가상 명조의 정동심 술토가 여기에 해당합니다.</span>':''}</div>`;}
+$$('[data-jj]').forEach(b=>b.onclick=()=>{jjShow(+b.dataset.jj);vib(8);});
+$('#sgD').innerHTML=OPT(GAN.split('').map((g,i)=>g+' '+gk(i)));$('#sgJ').innerHTML=OPT(JI.split('').map((g,i)=>g+' '+JIK[i]+'('+JJT[i].t+')'));$('#sgD').value=0;$('#sgJ').value=10;
+function sgDraw(){const dg=+$('#sgD').value,j=+$('#sgJ').value,ld=+$('#sgL').value;$('#sgLv').textContent=ld+'일';const R=dayRanges(j),cur=dayLord(j,ld);
+  const{c,w,h}=prep($('#sgCv'),.42);const L=12,Rr=w-12,X=d=>L+(Rr-L)*(d-1)/30,y0=h*.28,bh=h*.34;
+  R.forEach(q=>{const on=q===cur,col=ECOL[GAN_E[q.g]];c.fillStyle=col+(on?'':'55');rr(c,X(q.r[0])+1,y0,X(q.r[1]+1)-X(q.r[0])-2,bh,6);c.fill();if(on){c.strokeStyle=GO;c.lineWidth=3;rr(c,X(q.r[0])+1,y0,X(q.r[1]+1)-X(q.r[0])-2,bh,6);c.stroke();}
+    const cx=(X(q.r[0])+X(q.r[1]+1))/2,wd=X(q.r[1]+1)-X(q.r[0]);T(c,wd>50?GAN[q.g]+' '+q.d+'일':GAN[q.g],cx,y0+bh/2,'#16130f',13,'center','middle','800');T(c,q.name,cx,y0-10,on?GO:MU,10);T(c,q.r[0]+'일',X(q.r[0])+2,y0+bh+12,'#8a7a60',9,'left');});
+  const x=X(ld+.5);c.fillStyle=GO;c.beginPath();c.moveTo(x,y0+bh+20);c.lineTo(x-7,y0+bh+32);c.lineTo(x+7,y0+bh+32);c.closePath();c.fill();
+  const s=sipsung(dg,cur.g);$('#sgMsg').innerHTML=`<div class="res g">${JIK[j]}(${JI[j]}) 지장간 ${R.map(q=>GANK[q.g]+' '+q.r[0]+'~'+q.r[1]+'일').join(' · ')}<br>음력 ${ld}일 → <b>${gk(cur.g)}</b> 사령 (${cur.name}) → ${gk(dg)} 일간에게 <b>${s}</b><br>직업의 마음: <b>${JOB[s]}</b></div>`;}
+['#sgD','#sgJ'].forEach(id=>$(id).onchange=sgDraw);$('#sgL').oninput=sgDraw;
+$('#sgEx1').onclick=()=>{$('#sgD').value=8;$('#sgJ').value=2;const R=dayRanges(2);$('#sgL').value=R[0].r[0];sgDraw();toast('슬라이더로 무토 → 병화 → 갑목 구간을 옮겨 보세요');};
+$('#sgEx2').onclick=()=>{$('#sgD').value=0;$('#sgJ').value=10;$('#sgL').value=24;sgDraw();};
+
+/* ===== ④ ===== */
+$('#bL').innerHTML=LONS.map((l,i)=>`<option value="${i}">${l[0]} ${l[1].toFixed(1)}°</option>`).join('');$('#bL').value=16;
+$('#bGo').onclick=()=>{const dv=$('#bD').value,tv=$('#bT').value;if(!dv||!tv){toast('날짜와 시각을 넣어 주세요');return;}const[y,mo,d]=dv.split('-').map(Number),[hh,mm]=tv.split(':').map(Number);
+  if(y<1901||y>2049){toast('1901~2049년만 계산합니다');return;}const lon=LONS[+$('#bL').value][1];let corr=(inRange(dv,T830)?127.5:135-0)-lon;corr*=4;if(inRange(dv,DST))corr+=60;
+  const m=kmin(y,mo,d,hh,mm)-Math.round(corr),t=fromKmin(m);const r=calc({y:t.y,mo:t.mo,d:t.d,h:t.h,mi:t.mi,noTime:false,sex:'M',solar:false,yaja:$('#bY').checked,dst:false});
+  /* 일주 날짜(야자시 해제 시 23시 이후는 다음 날)에 맞춘 음력 */
+  let dd=new Date(Date.UTC(t.y,t.mo-1,t.d));if(t.h>=23&&!$('#bY').checked)dd=new Date(dd.getTime()+864e5);const L=lunarKR(dd.getUTCFullYear(),dd.getUTCMonth()+1,dd.getUTCDate());
+  const dg=r.D.g,sH=sipsung(dg,r.H.g),sM=sipsung(dg,r.M.g),lord=dayLord(r.D.j,L?L.d:15),sD=sipsung(dg,lord.g),gH=GRP(sH),gM=GRP(sM),gD=GRP(sD);
+  const agree=gM===gH&&gM===gD?'세 마음이 한 방향 — 생동심이 근본심·정동심과 모두 일치합니다.':gM===gH?'생동심이 근본심과 일치 — 순간의 마음이 깊은 성품을 거스르지 않습니다. 정동심(직업·배우자)과는 결이 달라 그 선택에서 고민이 생길 수 있습니다.':gM===gD?'생동심이 정동심과 일치 — 지금의 마음이 직업·배우자의 마음과 맞습니다. 다만 근본심과는 결이 달라, 조언을 듣고도 마지막 결정에서 머뭇거릴 수 있습니다.':'세 마음이 서로 다릅니다 — 순간의 마음이 근본심이나 정동심과 어긋나, 직업이나 배우자를 고를 때 갈등이 잦을 수 있습니다.';
+  $('#bOut').innerHTML=`<div class="out">태양시 ${t.y}-${pad(t.mo)}-${pad(t.d)} ${pad(t.h)}:${pad(t.mi)} (보정 ${Math.round(corr)}분)${L?` · 음력 ${L.leap?'윤':''}${L.m}월 ${L.d}일`:''}</div>
+  <div class="pl">${seatPl(r,'H')}</div>
+  <div class="chk3"><div>🌳 <b>근본심</b> 시간 ${gk(r.H.g)} = <b>${sH}</b> (${isJeong(sH)?'정':'편'}) — ${SIPMIND[sH]}<br><span class="mini">${isJeong(sH)?'믿고 결정할 때는 빠르고 과감하게, 막히면 버릴 줄 알기. "답답하다"는 소리만 조심.':'화합해서 의견을 따르고, 막히면 귀담아듣기. "약삭빠르다"는 소리만 조심.'}</span></div>
+  <div>⚡ <b>생동심</b> 월간 ${gk(r.M.g)} = <b>${sM}</b> — ${SIPMIND[sM]}</div>
+  <div>🏯 <b>정동심</b> 일지 ${JIK[r.D.j]}(${JI[r.D.j]}) ${JJT[r.D.j].t} · 음력 ${L?L.d:'?'}일 → ${gk(lord.g)} 사령 = <b>${sD}</b><br><span class="mini">직업의 마음: ${JOB[sD]}</span></div>
+  <div>🔎 <b>일치 살피기</b> (${GNAME[gH]} · ${GNAME[gM]} · ${GNAME[gD]})<br>${agree}</div></div>
+  <p class="note">절기는 정필 만세력과 같은 표, 음력은 한국천문연구원 기준표(1900~2050)로 계산했습니다. 해석은 공부용 참고이며, 실제 감명은 원국 전체와 운의 흐름을 함께 봅니다.</p>`;vib(15);};
+
+function redraw(){if(!$('#tab-t2').hidden)sdDraw();if(!$('#tab-t3').hidden)sgDraw();}
+function show(t){$$('.tabs button').forEach(x=>x.classList.toggle('on',x.dataset.tab===t));['t1','t2','t3','t4'].forEach(k=>$('#tab-'+k).hidden=k!==t);redraw();window.scrollTo(0,0);}
+$$('.tabs button').forEach(b=>b.onclick=()=>show(b.dataset.tab));
+let rz;window.addEventListener('resize',()=>{clearTimeout(rz);rz=setTimeout(redraw,120);});
+seatDraw();jpDraw('jeong');jjShow(10);redraw();
+})();
+</script>
+</body>
+</html>
